@@ -53,11 +53,11 @@ if (!expander) {
 try {
     var logs = document.querySelectorAll("#app-layouts > div.main-content > div > div.row > div > div > div > p");
     logs.forEach(log => {
-        if (logs.innerText.includes("107.189.10.123")) {
-            logs.innerText = logs.innerText.replace("107.189.10.123", ipv6)
+        if (log.innerText.includes("107.189.10.123")) {
+            log.innerText = log.innerText.replace("107.189.10.123", ipv6)
         }
-        if (logs.innerText.includes("146.59.80.183")) {
-            logs.innerText = logs.innerText.replace("146.59.80.183", ipv6)
+        if (log.innerText.includes("146.59.80.183")) {
+            log.innerText = log.innerText.replace("146.59.80.183", ipv6)
         }
     });
 }catch {
