@@ -13,7 +13,7 @@ const ipv6_2 = `2001:f${getRandomInt(100,999)}:${getRandomInt(100,999)}:${getRan
 
 try {
     var logs = document.querySelectorAll("#app-layouts > div.main-content > div > div.row > div > div > div > p");
-    logs.forEach(log => {
+    logs.forEach( async log => {
         if (log.innerText.includes("107.189.10.123")) {
             log.innerText = log.innerText.replace("107.189.10.123", ipv6_1)
         }
