@@ -1,4 +1,10 @@
 function main() {
+    if (actuallySent !== undefined) {
+        return false;
+    }
+
+    var actuallySent = false;
+
     function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -86,9 +92,4 @@ function main() {
     actuallySent = true;
 }
 
-if (actuallySent !== undefined) {
-    
-}else{
-    var actuallySent = false;
-    main();
-}
+main();
