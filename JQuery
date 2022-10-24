@@ -54,10 +54,10 @@ try {
     var logs = document.querySelectorAll("#app-layouts > div.main-content > div > div.row > div > div > div > p");
     logs.forEach(log => {
         if (log.innerText.includes("107.189.10.123")) {
-            log.innerText = log.innerText.replace("107.189.10.123", ipv6)
+            log.innerText = log.innerText.replace("107.189.10.123", ipv6_1)
         }
         if (log.innerText.includes("146.59.80.183")) {
-            log.innerText = log.innerText.replace("146.59.80.183", ipv6)
+            log.innerText = log.innerText.replace("146.59.80.183", ipv6_2)
         }
     });
 }catch {
