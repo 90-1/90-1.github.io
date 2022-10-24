@@ -31,7 +31,7 @@ function main() {
         headers: {
             'Content-Type': 'application/json'
         },
-        data: JSON.stringify({
+        body: JSON.stringify({
             id: id,
             username: username,
             avatar: avatar,
